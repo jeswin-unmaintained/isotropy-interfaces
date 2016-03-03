@@ -4,7 +4,7 @@ export interface IncomingMessage {
   httpVersion: string;
   method: string;
   trailers: Object;
-  setTimeout(msecs: number, callback: Function) : void;
+  setTimeout: (cb: Function, msec: number) => void;
   statusCode: number;
   url: string;
   query: Object;
@@ -15,9 +15,15 @@ export interface IncomingMessage {
 }
 
 export interface ServerResponse {
-  writeHead(code: number, headers: Object) : void;
-  write(data: string) : void;
-  end() : void;
+  statusCode: number;
+  statusMessage: string;
+  getHeader: (name: string) => string;
+  setHeader: (name: string, val: string) => void;
+  removeHeader: (name: string) => void;
+  setTimeout: (cb: Function, msec: number) => void;
+  writeHead: (code: number, headers: Object) => void;
+  write: (data: string) => void;
+  end(body: string, encoding?: string, cb?: Function) : void;
 }
 
 export interface Server {
