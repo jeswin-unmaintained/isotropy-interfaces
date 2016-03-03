@@ -21,6 +21,5 @@ export interface ServerResponse {
 }
 
 export interface Server {
-  listen(port: number, callback?: Function) : Server;
-  listen(path: string, callback?: Function) : Server;
+  listen(port: number, hostname?: string, backlog?: number, callback?: Function): Server;
 }
