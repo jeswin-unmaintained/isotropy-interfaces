@@ -1,4 +1,6 @@
 /* @flow */
+import type { IncomingMessage as IncomingMessageBase, ServerResponse as ServerResponseBase, Server as ServerBase } from "./http";
+
 export interface FormDataEntryType {
   fieldname: string;
   value: string;
@@ -9,35 +11,19 @@ export type FormDataType = Array<FormDataEntryType>;
 
 export type BodyType = string | FormDataType;
 
-export interface IncomingMessage {
-  headers: Object;
-  httpVersion: string;
-  method: string;
-  trailers: Object;
-  setTimeout: (cb: Function, msec: number) => void;
-  statusCode: number;
-  url: string;
-  query: Object;
-  href: string;
-  pathname: string;
-  search: string;
+import type {EventEmitter} from "./events";
+
+export interface IncomingMessage_Browser extends IncomingMessageBase {
   body: Object;
   __getBody: () => BodyType;
+  href: string;
+  pathname: string;
+  query: Object;
+  search: string;
 }
 
-export interface ServerResponse {
-  statusCode: number;
-  statusMessage: string;
-  getHeader: (name: string) => string;
-  setHeader: (name: string, val: string) => void;
-  on: (eventName: string, cb: Function) => void;
-  removeHeader: (name: string) => void;
-  setTimeout: (cb: Function, msec: number) => void;
-  writeHead: (code: number, headers: Object) => void;
-  write: (data: string) => void;
-  end(body: string, encoding?: string, cb?: Function) : void;
+export interface ServerResponse_Browser extends ServerResponseBase {
 }
 
-export interface Server {
-  listen(port: number, hostname?: string, backlog?: number, callback?: Function): Server;
+export interface Server_Browser extends ServerBase {
 }
