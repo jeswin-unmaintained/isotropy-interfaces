@@ -9,7 +9,7 @@ export interface IncomingMessage extends EventEmitter {
   trailers: Object;
   setTimeout: (cb: Function, msec: number) => void;
   statusCode: number;
-  url: string;  
+  url: string;
 }
 
 export interface ServerResponse extends EventEmitter {
@@ -22,7 +22,7 @@ export interface ServerResponse extends EventEmitter {
   statusMessage: string;
   writeHead: (code: number, headers: Object) => void;
   write: (data: string) => void;
-  end(body: string, encoding?: string, cb?: Function) : void;
+  end(body?: string, encoding?: string, cb?: Function) : void;
 }
 
 export interface Server {
