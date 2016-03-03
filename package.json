@@ -1,0 +1,12 @@
+{
+    "author": "Jeswin Kumar <jeswinpk@agilehead.com>",
+    "name": "isotropy-interfaces",
+    "version": "0.0.2",
+    "description": "Shared flow interfaces for isotropy.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nodejam/isotropy-interfaces.git"
+    },
+    "license": "MIT",
+    "keywords": ["isotropy", "isomorphic", "interfaces", "flow"]
+}
