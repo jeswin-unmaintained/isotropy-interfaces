@@ -19,6 +19,7 @@ export interface ServerResponse {
   statusMessage: string;
   getHeader: (name: string) => string;
   setHeader: (name: string, val: string) => void;
+  on: (eventName: string, cb: Function) => void;
   removeHeader: (name: string) => void;
   setTimeout: (cb: Function, msec: number) => void;
   writeHead: (code: number, headers: Object) => void;
