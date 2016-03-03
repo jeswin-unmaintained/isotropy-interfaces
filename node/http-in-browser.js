@@ -13,7 +13,7 @@ export type BodyType = string | FormDataType;
 
 import type {EventEmitter} from "./events";
 
-export interface IncomingMessage_Browser extends IncomingMessageBase {
+export interface IncomingMessage extends IncomingMessageBase {
   body: Object;
   __getBody: () => BodyType;
   href: string;
@@ -22,8 +22,8 @@ export interface IncomingMessage_Browser extends IncomingMessageBase {
   search: string;
 }
 
-export interface ServerResponse_Browser extends ServerResponseBase {
+export interface ServerResponse extends ServerResponseBase {
 }
 
-export interface Server_Browser extends ServerBase {
+export interface Server extends ServerBase {
 }
