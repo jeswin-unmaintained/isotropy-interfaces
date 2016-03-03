@@ -4,7 +4,7 @@ import type { IncomingMessage as IncomingMessageBase, ServerResponse as ServerRe
 export interface FormDataEntryType {
   fieldname: string;
   value: string;
-  filename?: string;
+  filename?: ?string;
 }
 
 export type FormDataType = Array<FormDataEntryType>;
