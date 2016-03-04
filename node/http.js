@@ -31,7 +31,7 @@ export interface ProcessedIncomingMessage extends IncomingMessage {
   pathname?: string;
   query?: Object;
   search?: string;
-  files?: Array<FormDataEntryType>
+  files?: any
 }
 
 export interface ServerResponse extends EventEmitter {
