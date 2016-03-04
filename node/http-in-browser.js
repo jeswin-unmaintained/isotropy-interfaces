@@ -1,5 +1,5 @@
 /* @flow */
-import type { EnhancedIncomingMessage, ServerResponse as ServerResponseBase, Server as ServerBase } from "./http";
+import type { ProcessedIncomingMessage, ServerResponse as ServerResponseBase, Server as ServerBase } from "./http";
 
 export interface FormDataEntryType {
   fieldname: string;
@@ -13,7 +13,7 @@ export type BodyType = string | FormDataType;
 
 import type {EventEmitter} from "./events";
 
-export interface IncomingMessage extends EnhancedIncomingMessage {
+export interface IncomingMessage extends ProcessedIncomingMessage {
   __getBody: () => BodyType;
 }
 

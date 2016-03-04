@@ -12,7 +12,7 @@ export interface IncomingMessage extends EventEmitter {
   url: string;
 }
 
-export interface EnhancedIncomingMessage extends IncomingMessage {
+export interface ProcessedIncomingMessage extends IncomingMessage {
   body?: Object;
   href?: string;
   pathname?: string;
