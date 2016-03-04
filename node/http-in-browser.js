@@ -1,10 +1,13 @@
 /* @flow */
 import type { ProcessedIncomingMessage, ServerResponse as ServerResponseBase, Server as ServerBase } from "./http";
 
-export interface FormDataEntryType {
+export type FormDataEntryType = {
   fieldname: string;
-  value: string;
-  filename?: ?string;
+  value?: string;
+  filename?: string;
+  file?: Object;
+  transferEncoding?: string;
+  mimeType?: string;
 }
 
 export type FormDataType = Array<FormDataEntryType>;

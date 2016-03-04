@@ -1,6 +1,19 @@
 /* @flow */
 import type {EventEmitter} from "./events";
 
+export type FormDataEntryType = {
+  fieldname: string;
+  value?: string;
+  filename?: string;
+  file?: Object;
+  transferEncoding?: string;
+  mimeType?: string;
+}
+
+export type FormDataType = Array<FormDataEntryType>;
+
+export type BodyType = string | FormDataType;
+
 export interface IncomingMessage extends EventEmitter {
   headers: Object;
   httpVersion: string;
@@ -18,6 +31,7 @@ export interface ProcessedIncomingMessage extends IncomingMessage {
   pathname?: string;
   query?: Object;
   search?: string;
+  files?: Array<FormDataEntryType>
 }
 
 export interface ServerResponse extends EventEmitter {
