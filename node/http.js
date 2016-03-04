@@ -12,6 +12,14 @@ export interface IncomingMessage extends EventEmitter {
   url: string;
 }
 
+export interface EnhancedIncomingMessage extends IncomingMessage {
+  body?: Object;
+  href?: string;
+  pathname?: string;
+  query?: Object;
+  search?: string;
+}
+
 export interface ServerResponse extends EventEmitter {
   pipe: (dest: any) => void;
   getHeader: (name: string) => string;
