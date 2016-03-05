@@ -18,7 +18,7 @@ import type {EventEmitter} from "./events";
 
 export interface IncomingMessage extends ProcessedIncomingMessage {
   __getBody: () => BodyType;
-  __setBody(val: BodyType) => void;
+  __setBody: (val: BodyType) => void;
 }
 
 export interface ServerResponse extends ServerResponseBase {
