@@ -18,10 +18,12 @@ import type {EventEmitter} from "./events";
 
 export interface IncomingMessage extends ProcessedIncomingMessage {
   __getBody: () => BodyType;
+  __setBody(val: BodyType) => void;
 }
 
 export interface ServerResponse extends ServerResponseBase {
 }
 
 export interface Server extends ServerBase {
+  requestListener: (req: IncomingMessage, res: ServerResponse) => any
 }
